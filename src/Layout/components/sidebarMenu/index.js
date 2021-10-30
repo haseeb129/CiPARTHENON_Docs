@@ -3,7 +3,17 @@ import MenuItem from "./MenuItem";
 import { stylSelected } from "../../../helper/sidebar";
 
 const SideBar = (props) => {
-  const [selectedMenutitle, setSelectedMenutitle] = useState("Getting Started");
+  const [selectedMenutitle, setSelectedMenutitle] = useState(
+    props.selectedMenu
+  );
+
+  useEffect(() => {
+    setSelectedMenutitle(props.selectedMenu);
+  }, [props.selectedMenu]);
+
+  useEffect(() => {
+    props.scrollTop();
+  }, [selectedMenutitle]);
 
   const handleSelection = (title) => {
     setSelectedMenutitle(title);

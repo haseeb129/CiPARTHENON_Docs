@@ -313,6 +313,8 @@ export const stylSelected = {
   color: "red",
 };
 
+export var selectedMenuTitle = "Getting Started";
+
 export const fetchListOfMenu = (sideBarMenuList, pathname) => {
   var ans = [];
 
@@ -321,7 +323,7 @@ export const fetchListOfMenu = (sideBarMenuList, pathname) => {
     if (_.isEmpty(ans)) continue;
     break;
   }
-  return sideBarMenuList;
+  return { updatedList: sideBarMenuList, selectedMenuTitle };
 };
 
 function getParent(model, title) {
@@ -334,6 +336,7 @@ function getParent(model, title) {
 
   if (model.link === title) {
     model.isMenuExpanded = true;
+    selectedMenuTitle = model.title;
     return [item];
   }
 

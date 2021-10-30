@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import View from "./View";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import RemoveCircleOutlineIcon from "@material-ui/icons/RemoveCircleOutline";
@@ -7,8 +7,8 @@ import { useHistory } from "react-router-dom";
 
 const MenuItem = (props) => {
   let history = useHistory();
-
   const [isExpanded, setIsExpand] = useState(props.isMenuExpanded);
+
   const handleExpand = () => {
     setIsExpand(!isExpanded);
   };

@@ -2,6 +2,10 @@
   text-decoration: none;
   color: black !important;
 }
+.navlink.active {
+  font-weight: bolder;
+  color: #fbaf3a !important;
+}
 .brand-image {
   /* width: 250px; */
   max-height: 40px;

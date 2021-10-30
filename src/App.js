@@ -1,7 +1,6 @@
-import React, { useLayoutEffect } from "react";
-import { BrowserRouter, Switch, Route, withRouter } from "react-router-dom";
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import { Layout } from "./Layout";
-import "./App.css";
 class App extends React.Component {
   render() {
     return (

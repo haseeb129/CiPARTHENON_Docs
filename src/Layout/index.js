@@ -44,17 +44,33 @@ import { CreateYourFirstDashboard } from "../pages/buildingDashboardSection/Crea
 import { DashboardBinders } from "../pages/buildingDashboardSection/dashboardBinders";
 import { FilterYourWidgets } from "../pages/buildingDashboardSection/Filter_your_widgets";
 import { ComingSoon } from "../pages/comingSoon";
-import { useLocation } from "react-router-dom";
+import { useLocation, Redirect } from "react-router-dom";
 import { sideBarMenu, fetchListOfMenu } from "../helper/sidebar";
+import { scroller, Element } from "react-scroll";
 
 export const Layout = (props) => {
   const location = useLocation();
+  const [selectedMenu, setSelectedMenu] = useState("");
   const [sideBarMenuList, setSideBarMenu] = useState([]);
 
   useEffect(() => {
-    const updatedList = fetchListOfMenu(sideBarMenu, location.pathname);
+    const { updatedList, selectedMenuTitle } = fetchListOfMenu(
+      sideBarMenu,
+      location.pathname
+    );
     setSideBarMenu(updatedList);
+    setSelectedMenu(selectedMenuTitle);
   }, []);
+
+  const scrollTop = () => {
+    scroller.scrollTo("myScrollToElement", {
+      duration: 0,
+      delay: 0,
+      smooth: true,
+      containerId: "right-column-id",
+      offset: 0,
+    });
+  };
 
   return (
     <div>
@@ -66,259 +82,279 @@ export const Layout = (props) => {
             <Sidebar
               location={location.pathname}
               sideBarMenu={sideBarMenuList}
+              selectedMenu={selectedMenu}
+              scrollTop={scrollTop}
             />
           </Col>
-          <Col xs={7} md={7} lg={8} xl={8} className="right-column">
-            <Switch>
-              <Route
-                exact
-                path="/AccessingDashboards"
-                render={(props) => <AccessingDashboards {...props} />}
-              />
-              <Route
-                exact
-                path="/OrganizeYourDashboards"
-                render={(props) => <OrganizeYourDashboards {...props} />}
-              />
-              <Route
-                exact
-                path="/DashboardProperties"
-                render={(props) => <DashboardProperties {...props} />}
-              />
-              <Route
-                exact
-                path="/RebindYourDashboards"
-                render={(props) => <RebindYourDashboards {...props} />}
-              />
-              <Route
-                exact
-                path="/VisualizeAndShareYourDashboards"
-                render={(props) => (
-                  <VisualizeAndShareYourDashboards {...props} />
-                )}
-              />
-              <Route
-                exact
-                path="/PreparingYourData"
-                render={(props) => <PreparingYourData {...props} />}
-              />
-              <Route
-                exact
-                path="/BeforeImportingTheData"
-                render={(props) => <BeforeImportingTheData {...props} />}
-              />
-              <Route
-                exact
-                path="/MyData"
-                render={(props) => <MyData {...props} />}
-              />
-              <Route
-                exact
-                path="/DataPreview"
-                render={(props) => <DataPreview {...props} />}
-              />
-              <Route
-                exact
-                path="/DataProperties"
-                render={(props) => <DataProperties {...props} />}
-              />
+          <Col
+            xs={7}
+            md={7}
+            lg={8}
+            xl={8}
+            className="right-column"
+            id="right-column-id"
+          >
+            <Element name="myScrollToElement">
+              <Switch>
+                <Route
+                  exact
+                  path="/GettingStarted"
+                  render={(props) => <GettingStarted {...props} />}
+                />
 
-              <Route
-                exact
-                path="/CreateData"
-                render={(props) => <CreateData {...props} />}
-              />
+                <Route
+                  exact
+                  path="/AccessingDashboards"
+                  render={(props) => <AccessingDashboards {...props} />}
+                />
 
-              <Route
-                exact
-                path="/StepsNeedToFollow"
-                render={(props) => <StepsNeedToFollow {...props} />}
-              />
+                <Route
+                  exact
+                  path="/OrganizeYourDashboards"
+                  render={(props) => <OrganizeYourDashboards {...props} />}
+                />
+                <Route
+                  exact
+                  path="/DashboardProperties"
+                  render={(props) => <DashboardProperties {...props} />}
+                />
+                <Route
+                  exact
+                  path="/RebindYourDashboards"
+                  render={(props) => <RebindYourDashboards {...props} />}
+                />
+                <Route
+                  exact
+                  path="/VisualizeAndShareYourDashboards"
+                  render={(props) => (
+                    <VisualizeAndShareYourDashboards {...props} />
+                  )}
+                />
+                <Route
+                  exact
+                  path="/PreparingYourData"
+                  render={(props) => <PreparingYourData {...props} />}
+                />
+                <Route
+                  exact
+                  path="/BeforeImportingTheData"
+                  render={(props) => <BeforeImportingTheData {...props} />}
+                />
+                <Route
+                  exact
+                  path="/MyData"
+                  render={(props) => <MyData {...props} />}
+                />
+                <Route
+                  exact
+                  path="/DataPreview"
+                  render={(props) => <DataPreview {...props} />}
+                />
+                <Route
+                  exact
+                  path="/DataProperties"
+                  render={(props) => <DataProperties {...props} />}
+                />
 
-              <Route
-                exact
-                path="/CreateView"
-                render={(props) => <CreateView {...props} />}
-              />
+                <Route
+                  exact
+                  path="/CreateData"
+                  render={(props) => <CreateData {...props} />}
+                />
 
-              <Route
-                exact
-                path="/MergeData"
-                render={(props) => <MergeData {...props} />}
-              />
+                <Route
+                  exact
+                  path="/StepsNeedToFollow"
+                  render={(props) => <StepsNeedToFollow {...props} />}
+                />
 
-              <Route
-                exact
-                path="/StepsToFollow"
-                render={(props) => <StepsToFollow {...props} />}
-              />
+                <Route
+                  exact
+                  path="/CreateView"
+                  render={(props) => <CreateView {...props} />}
+                />
 
-              <Route
-                exact
-                path="/DataRefreshMethods"
-                render={(props) => <DataRefreshMethods {...props} />}
-              />
+                <Route
+                  exact
+                  path="/MergeData"
+                  render={(props) => <MergeData {...props} />}
+                />
 
-              <Route
-                exact
-                path="/DataTransformation"
-                render={(props) => <DataTransformation {...props} />}
-              />
+                <Route
+                  exact
+                  path="/StepsToFollow"
+                  render={(props) => <StepsToFollow {...props} />}
+                />
 
-              <Route
-                exact
-                path="/AggregatedColumn"
-                render={(props) => <AggregatedColumn {...props} />}
-              />
+                <Route
+                  exact
+                  path="/DataRefreshMethods"
+                  render={(props) => <DataRefreshMethods {...props} />}
+                />
 
-              <Route
-                exact
-                path="/CalculatedColumn"
-                render={(props) => <CalculatedColumn {...props} />}
-              />
+                <Route
+                  exact
+                  path="/DataTransformation"
+                  render={(props) => <DataTransformation {...props} />}
+                />
 
-              <Route
-                exact
-                path="/TexSplitter"
-                render={(props) => <TextSplitter {...props} />}
-              />
+                <Route
+                  exact
+                  path="/AggregatedColumn"
+                  render={(props) => <AggregatedColumn {...props} />}
+                />
 
-              <Route
-                exact
-                path="/Filter"
-                render={(props) => <Filter {...props} />}
-              />
+                <Route
+                  exact
+                  path="/CalculatedColumn"
+                  render={(props) => <CalculatedColumn {...props} />}
+                />
 
-              <Route
-                exact
-                path="/FindAndReplace"
-                render={(props) => <FindAndReplace {...props} />}
-              />
+                <Route
+                  exact
+                  path="/TexSplitter"
+                  render={(props) => <TextSplitter {...props} />}
+                />
 
-              <Route
-                exact
-                path="/Grouping"
-                render={(props) => <Grouping {...props} />}
-              />
+                <Route
+                  exact
+                  path="/Filter"
+                  render={(props) => <Filter {...props} />}
+                />
 
-              <Route
-                exact
-                path="/Normalize"
-                render={(props) => <Normalize {...props} />}
-              />
+                <Route
+                  exact
+                  path="/FindAndReplace"
+                  render={(props) => <FindAndReplace {...props} />}
+                />
 
-              <Route
-                exact
-                path="/PivotData"
-                render={(props) => <PivotData {...props} />}
-              />
+                <Route
+                  exact
+                  path="/Grouping"
+                  render={(props) => <Grouping {...props} />}
+                />
 
-              <Route
-                exact
-                path="/UnpivotData"
-                render={(props) => <UnpivotData {...props} />}
-              />
+                <Route
+                  exact
+                  path="/Normalize"
+                  render={(props) => <Normalize {...props} />}
+                />
 
-              <Route
-                exact
-                path="/Standardize"
-                render={(props) => <Standardize {...props} />}
-              />
+                <Route
+                  exact
+                  path="/PivotData"
+                  render={(props) => <PivotData {...props} />}
+                />
 
-              <Route
-                exact
-                path="/Update"
-                render={(props) => <Update {...props} />}
-              />
+                <Route
+                  exact
+                  path="/UnpivotData"
+                  render={(props) => <UnpivotData {...props} />}
+                />
 
-              <Route
-                exact
-                path="/MyConnections"
-                render={(props) => <MyConnections {...props} />}
-              />
+                <Route
+                  exact
+                  path="/Standardize"
+                  render={(props) => <Standardize {...props} />}
+                />
 
-              <Route
-                exact
-                path="/ConnectionBroker"
-                render={(props) => <ConnectionBroker {...props} />}
-              />
+                <Route
+                  exact
+                  path="/Update"
+                  render={(props) => <Update {...props} />}
+                />
 
-              <Route
-                exact
-                path="/ConnectionProperties"
-                render={(props) => <ConnectionProperties {...props} />}
-              />
+                <Route
+                  exact
+                  path="/MyConnections"
+                  render={(props) => <MyConnections {...props} />}
+                />
 
-              <Route
-                exact
-                path="/DataFusion"
-                render={(props) => <DataFusion {...props} />}
-              />
+                <Route
+                  exact
+                  path="/ConnectionBroker"
+                  render={(props) => <ConnectionBroker {...props} />}
+                />
 
-              <Route
-                exact
-                path="/GettingStarted"
-                render={(props) => <GettingStarted {...props} />}
-              />
+                <Route
+                  exact
+                  path="/ConnectionProperties"
+                  render={(props) => <ConnectionProperties {...props} />}
+                />
 
-              <Route
-                exact
-                path="/CIPARTHENON"
-                render={(props) => <CIPARTHENON {...props} />}
-              />
+                <Route
+                  exact
+                  path="/DataFusion"
+                  render={(props) => <DataFusion {...props} />}
+                />
 
-              <Route
-                exact
-                path="/DataStream"
-                render={(props) => <DataStream {...props} />}
-              />
+                <Route
+                  exact
+                  path="/"
+                  render={(props) => (
+                    <Redirect to="GettingStarted" {...props} />
+                  )}
+                />
 
-              <Route
-                exact
-                path="/BuildingADashboard"
-                render={(props) => <BuildingADashboard {...props} />}
-              />
+                <Route
+                  exact
+                  path="/CIPARTHENON"
+                  render={(props) => <CIPARTHENON {...props} />}
+                />
 
-              <Route
-                exact
-                path="/CreateYourFirstDashboard"
-                render={(props) => <CreateYourFirstDashboard {...props} />}
-              />
+                <Route
+                  exact
+                  path="/DataStream"
+                  render={(props) => <DataStream {...props} />}
+                />
 
-              <Route
-                exact
-                path="/DashboardBinders"
-                render={(props) => <DashboardBinders {...props} />}
-              />
+                <Route
+                  exact
+                  path="/BuildingADashboard"
+                  render={(props) => <BuildingADashboard {...props} />}
+                />
 
-              <Route
-                exact
-                path="/FilterYourWidgets"
-                render={(props) => <FilterYourWidgets {...props} />}
-              />
+                <Route
+                  exact
+                  path="/CreateYourFirstDashboard"
+                  render={(props) => <CreateYourFirstDashboard {...props} />}
+                />
 
-              <Route
-                exact
-                path="/tutorials"
-                render={(props) => <ComingSoon {...props} />}
-              />
+                <Route
+                  exact
+                  path="/DashboardBinders"
+                  render={(props) => <DashboardBinders {...props} />}
+                />
 
-              <Route
-                exact
-                path="/apireference"
-                render={(props) => <ComingSoon {...props} />}
-              />
-              <Route
-                exact
-                path="/faq"
-                render={(props) => <ComingSoon {...props} />}
-              />
-              <Route
-                exact
-                path="/releasenotes"
-                render={(props) => <ComingSoon {...props} />}
-              />
-            </Switch>
+                <Route
+                  exact
+                  path="/FilterYourWidgets"
+                  render={(props) => <FilterYourWidgets {...props} />}
+                />
+
+                <Route
+                  exact
+                  path="/tutorials"
+                  render={(props) => <ComingSoon {...props} />}
+                />
+
+                <Route
+                  exact
+                  path="/apireference"
+                  render={(props) => <ComingSoon {...props} />}
+                />
+                <Route
+                  exact
+                  path="/faq"
+                  render={(props) => <ComingSoon {...props} />}
+                />
+                <Route
+                  exact
+                  path="/releasenotes"
+                  render={(props) => <ComingSoon {...props} />}
+                />
+              </Switch>
+            </Element>
           </Col>
         </Row>
       </Container>

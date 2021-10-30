@@ -14,7 +14,7 @@ function Header() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
-          <LinkContainer to="/gettingStarted">
+          <LinkContainer to="/GettingStarted">
             <NavLink className="navlink">Documentation</NavLink>
           </LinkContainer>
 
