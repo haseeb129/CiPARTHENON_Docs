@@ -1,0 +1,176 @@
+@font-face {
+  font-family: "global";
+  src: local("Global-Font"), url("./fonts/Global-Font.ttf") format("truetype");
+  font-weight: normal;
+}
+body {
+}
+.menu-item-wrapper {
+  min-height: 25px;
+}
+
+.menu-item-wrapper :hover {
+  color: #fbaf3a;
+}
+
+.menu-heading :hover ~ .icon-wrapper {
+  color: #fbaf3a;
+}
+
+.menu-heading-wrapper {
+  /* font-family: global; */
+
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.icon-wrapper {
+  vertical-align: baseline;
+  margin: 0 5px 5px 0;
+}
+
+.paddingLeft {
+  /* padding-left: 20px; */
+}
+.menu-heading {
+  padding-left: 5px;
+  padding-top: 6px;
+}
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  min-height: 100vh;
+}
+.sidebar-wrapper {
+  height: 82vh;
+  border-right: 1px solid silver;
+  background-color: #fafafa;
+  padding-top: 20px;
+  overflow: auto;
+}
+
+.silver-color {
+  color: silver;
+}
+
+.silver-color :hover {
+  color: #fbaf3a;
+}
+
+.ui-class,
+li {
+  padding: 0;
+  margin-bottom: 3px;
+}
+
+.ui-class {
+  counter-reset: foo;
+  display: table;
+  margin-bottom: 3px;
+}
+
+li {
+  list-style: circle;
+  counter-increment: foo;
+  display: table-row;
+  font-size: 13px;
+  margin-bottom: 20px !important;
+  margin-top: 20px !important;
+}
+
+li::before {
+  content: "\25CF";
+  display: table-cell;
+  text-align: right;
+  padding-right: 0.3em;
+  margin-bottom: 3px;
+}
+
+.padding-Top {
+  padding-top: 30px;
+  font-weight: 500;
+}
+
+.padding-bottom {
+  padding-bottom: 30px;
+}
+
+.imageClass {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.right-column {
+  height: 88vh !important;
+  overflow: auto !important;
+  padding-bottom: 50px;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.italic-text {
+  font-style: italic;
+}
+p span {
+  font-size: 13px;
+}
+
+.space {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.search-bar {
+  /* width: 200px !important; */
+  /* height: 30px !important; */
+  /* color: silver !important; */
+  /* border: 1px solid silver !important; */
+  border-radius: 25px !important;
+  /* background: #fff !important; */
+  /* text-align: left !important; */
+}
+
+.icon-div {
+  padding-top: 10px;
+  float: right;
+}
+
+.centerAllign {
+  text-align: center;
+}
+
+.selected {
+  color: #fbaf3a;
+}
+
+.fullHover:hover {
+  color: #fbaf3a;
+}
+
+.mainPage li::before {
+  content: "\25CF";
+  display: table-cell;
+  text-align: right;
+  padding-right: 0.3em;
+  margin-bottom: 3px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.mainPage .pageLink {
+  color: #fbaf3a;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  cursor: pointer;
+}

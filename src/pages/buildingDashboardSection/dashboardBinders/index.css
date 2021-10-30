@@ -1,0 +1,26 @@
+@import "../../../index.css";
+
+.dashboardBinders li::before {
+  content: "\25CF";
+  display: table-cell;
+  text-align: right;
+  padding-right: 0.3em;
+  margin-bottom: 3px;
+  padding-left: 20px;
+}
+
+.dashboardBinders a {
+  font-size: 13px;
+  color: blue !important;
+  cursor: pointer;
+  margin-bottom: 20px !important;
+  text-decoration: underline !important;
+  text-decoration-style: dotted !important;
+}
+
+.dashboardBinders ol {
+  padding-left: 15px;
+}
+.dashboardBinders .numberedList li::before {
+  display: none;
+}

@@ -1,0 +1,48 @@
+.navlink {
+  text-decoration: none;
+  color: black !important;
+}
+.brand-image {
+  /* width: 250px; */
+  max-height: 40px;
+  padding-right: 10px;
+}
+
+.header-cntnt {
+  display: flex;
+  border-bottom: 1px solid #909090;
+  width: 100%;
+  height: 60px;
+}
+.head-right {
+  display: flex;
+}
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 1rem;
+}
+.navlink {
+  padding-left: 1.6rem;
+}
+.search-dv {
+  padding-left: 1.6rem;
+}
+
+.inside-search {
+  color: silver;
+  border: 1px solid silver;
+  border-radius: 25px;
+  background: #fff;
+  text-align: left;
+}
+
+.navbar-wrapper {
+  width: 100%;
+  min-height: 60px;
+  background-color: #fff;
+  border-top: 2px solid #fbaf3a;
+  border-bottom: 1px solid silver;
+}
