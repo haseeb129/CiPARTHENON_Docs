@@ -3,8 +3,12 @@ import "./header.css";
 import Logo from "../../../assests/OnlyLogo.png";
 import { Navbar, Nav, NavLink } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import { useLocation, Redirect, useHistory } from "react-router-dom";
 
 function Header() {
+  const history = useHistory();
+  console.log("path", history);
+  console.log("pathname", history?.location?.pathname?.split("/")[1]);
   return (
     <Navbar collapseOnSelect expand="md" className="navbar-wrapper">
       <Navbar.Brand href="/">
@@ -13,9 +17,18 @@ function Header() {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="ml-auto">
-          <LinkContainer to="/GettingStarted">
-            <NavLink className="navlink">Documentation</NavLink>
+        <Nav
+          className="ml-auto"
+          activeKey={history?.location?.pathname?.split("/")[1]}
+        >
+          <LinkContainer to="/documentation/GettingStarted">
+            <NavLink
+              className="navlink"
+              eventKey="documentation"
+              // active={"navlink-active-class"}
+            >
+              Documentation
+            </NavLink>
           </LinkContainer>
 
           <LinkContainer to="/tutorials">
@@ -27,7 +40,9 @@ function Header() {
           </LinkContainer>
 
           <LinkContainer to="/faq">
-            <NavLink className="navlink">FAQ</NavLink>
+            <NavLink className="navlink" eventKey="faq">
+              FAQ
+            </NavLink>
           </LinkContainer>
 
           <LinkContainer to="/releasenotes">

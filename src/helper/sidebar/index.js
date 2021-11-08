@@ -1,15 +1,15 @@
-const _ = require("lodash");
+import _ from "lodash";
 
 export const sideBarMenu = [
   {
     title: "Getting Started",
-    link: "/GettingStarted",
+    link: "/documentation/GettingStarted",
     isMenuExpanded: false,
 
     child: [
       {
         title: "What is ciPARTHENON",
-        link: "/CIPARTHENON",
+        link: "/documentation/CIPARTHENON",
         isMenuExpanded: false,
         child: [],
       },
@@ -18,17 +18,17 @@ export const sideBarMenu = [
 
   {
     title: "Accessing your Dashboards",
-    link: "/AccessingDashboards",
+    link: "/documentation/AccessingDashboards",
     isMenuExpanded: false,
     child: [
       {
         title: "Organize your dashboards",
-        link: "/OrganizeYourDashboards",
+        link: "/documentation/OrganizeYourDashboards",
         isMenuExpanded: false,
         child: [
           {
             title: "Dasboard Properties",
-            link: "/DashboardProperties",
+            link: "/documentation/DashboardProperties",
             isMenuExpanded: false,
             child: [],
           },
@@ -37,14 +37,14 @@ export const sideBarMenu = [
 
       {
         title: "Rebind your dashboards",
-        link: "/RebindYourDashboards",
+        link: "/documentation/RebindYourDashboards",
         isMenuExpanded: false,
         child: [],
       },
 
       {
         title: "Visualize and Share your dashboards",
-        link: "/VisualizeAndShareYourDashboards",
+        link: "/documentation/VisualizeAndShareYourDashboards",
         isMenuExpanded: false,
         child: [],
       },
@@ -52,30 +52,30 @@ export const sideBarMenu = [
   },
   {
     title: "Preparing your Data",
-    link: "/PreparingYourData",
+    link: "/documentation/PreparingYourData",
     isMenuExpanded: false,
     child: [
       {
         title: "Before Importing the data",
-        link: "/BeforeImportingTheData",
+        link: "/documentation/BeforeImportingTheData",
         isMenuExpanded: false,
         child: [],
       },
 
       {
         title: "My Data",
-        link: "/MyData",
+        link: "/documentation/MyData",
         isMenuExpanded: false,
         child: [
           {
             title: "Data Preview",
-            link: "/DataPreview",
+            link: "/documentation/DataPreview",
             isMenuExpanded: false,
             child: [],
           },
           {
             title: "Data Properties",
-            link: "/DataProperties",
+            link: "/documentation/DataProperties",
             isMenuExpanded: false,
             child: [],
           },
@@ -83,12 +83,12 @@ export const sideBarMenu = [
       },
       {
         title: "Create Data",
-        link: "/CreateData",
+        link: "/documentation/CreateData",
         isMenuExpanded: false,
         child: [
           {
             title: "Steps need to follow",
-            link: "/stepsToFollow",
+            link: "/documentation/stepsToFollow",
             isMenuExpanded: false,
             child: [],
           },
@@ -96,18 +96,18 @@ export const sideBarMenu = [
       },
       {
         title: "Create View",
-        link: "/CreateView",
+        link: "/documentation/CreateView",
         isMenuExpanded: false,
         child: [],
       },
       {
         title: "Merge Data",
-        link: "/MergeData",
+        link: "/documentation/MergeData",
         isMenuExpanded: false,
         child: [
           {
             title: "Steps to follow",
-            link: "/StepsToFollow",
+            link: "/documentation/StepsToFollow",
             isMenuExpanded: false,
             child: [],
           },
@@ -115,78 +115,78 @@ export const sideBarMenu = [
       },
       {
         title: "Data refresh methods",
-        link: "/DataRefreshMethods",
+        link: "/documentation/DataRefreshMethods",
         isMenuExpanded: false,
         child: [],
       },
       {
         title: "Data Transformation",
-        link: "/DataTransformation",
+        link: "/documentation/DataTransformation",
         isMenuExpanded: false,
         child: [
           {
             title: "Aggregated Column",
-            link: "/AggregatedColumn",
+            link: "/documentation/AggregatedColumn",
             isMenuExpanded: false,
             child: [],
           },
           {
             title: "Calculated Column",
-            link: "/CalculatedColumn",
+            link: "/documentation/CalculatedColumn",
             isMenuExpanded: false,
             child: [],
           },
           {
             title: "Text splitter",
-            link: "/TextSplitter",
+            link: "/documentation/TextSplitter",
             isMenuExpanded: false,
             child: [],
           },
           {
             title: "Filer",
-            link: "/Filter",
+            link: "/documentation/Filter",
             isMenuExpanded: false,
             child: [],
           },
           {
             title: "Find and replace",
-            link: "/FindAndReplace",
+            link: "/documentation/FindAndReplace",
             isMenuExpanded: false,
             child: [],
           },
           {
             title: "Grouping",
-            link: "/Grouping",
+            link: "/documentation/Grouping",
             isMenuExpanded: false,
             child: [],
           },
           {
             title: "Normalize",
-            link: "/Normalize",
+            link: "/documentation/Normalize",
             isMenuExpanded: false,
             child: [],
           },
           {
             title: "PivotData",
-            link: "/PivotData",
+            link: "/documentation/PivotData",
             isMenuExpanded: false,
             child: [],
           },
           {
             title: "Standardize",
-            link: "/Standardize",
+            link: "/documentation/Standardize",
             isMenuExpanded: false,
             child: [],
           },
           {
             title: "Update",
-            link: "/Update",
+            link: "/documentation/Update",
             isMenuExpanded: false,
             child: [],
           },
           {
             title: "UnpivotData",
-            link: "/UnpivotData",
+            link: "/documentation/UnpivotData",
             isMenuExpanded: false,
             child: [],
           },
@@ -194,18 +194,18 @@ export const sideBarMenu = [
       },
       {
         title: "My Connections",
-        link: "/MyConnections",
+        link: "/documentation/MyConnections",
         isMenuExpanded: false,
         child: [
           {
             title: "Connection Properties",
-            link: "/ConnectionProperties",
+            link: "/documentation/ConnectionProperties",
             isMenuExpanded: false,
             child: [],
           },
           {
             title: "Connection Broker",
-            link: "/ConnectionBroker",
+            link: "/documentation/ConnectionBroker",
             isMenuExpanded: false,
             child: [],
           },
@@ -213,13 +213,13 @@ export const sideBarMenu = [
       },
       {
         title: "Data Fusion",
-        link: "/DataFusion",
+        link: "/documentation/DataFusion",
         isMenuExpanded: false,
         child: [],
       },
       {
         title: "Data Stream",
-        link: "/DataStream",
+        link: "/documentation/DataStream",
         isMenuExpanded: false,
         child: [],
       },
@@ -227,52 +227,52 @@ export const sideBarMenu = [
   },
   {
     title: "Building A Dashboard",
-    link: "/BuildingADashboard",
+    link: "/documentation/BuildingADashboard",
     isMenuExpanded: false,
     child: [
       {
         title: "Create your first Dashboard",
-        link: "/CreateYourFirstDashboard",
+        link: "/documentation/CreateYourFirstDashboard",
         isMenuExpanded: false,
         child: [],
       },
       {
         title: " Dashboard Binders",
-        link: "/DashboardBinders",
+        link: "/documentation/DashboardBinders",
         isMenuExpanded: false,
         child: [],
       },
       {
         title: "Filter your Widgets",
-        link: "/FilterYourWidgets",
+        link: "/documentation/FilterYourWidgets",
         isMenuExpanded: false,
         child: [
           {
             title: "Global Filter",
-            link: "/GlobalFilter",
+            link: "/documentation/GlobalFilter",
             isMenuExpanded: false,
             child: [],
           },
           {
             title: "Using Data Selectors",
-            link: "/UsingDataSelectors",
+            link: "/documentation/UsingDataSelectors",
             isMenuExpanded: false,
             child: [],
           },
           {
             title: "Using Inputs",
-            link: "/UsingInputs",
+            link: "/documentation/UsingInputs",
             isMenuExpanded: false,
             child: [
               {
                 title: "Using Numeric Inputs",
-                link: "/UsingNumericInputs",
+                link: "/documentation/UsingNumericInputs",
                 isMenuExpanded: false,
                 child: [],
               },
               {
                 title: "Using Text Inputs",
-                link: "/UsingTextInputs",
+                link: "/documentation/UsingTextInputs",
                 isMenuExpanded: false,
                 child: [],
               },
@@ -280,18 +280,18 @@ export const sideBarMenu = [
           },
           {
             title: "Using Lists",
-            link: "/UsingLists",
+            link: "/documentation/UsingLists",
             isMenuExpanded: false,
             child: [
               {
                 title: "Using Formula",
-                link: "/UsingFormula",
+                link: "/documentation/UsingFormula",
                 isMenuExpanded: false,
                 child: [],
               },
               {
                 title: "Using Widgets",
-                link: "/UsingWidgets",
+                link: "/documentation/UsingWidgets",
                 isMenuExpanded: false,
                 child: [],
               },
@@ -299,7 +299,7 @@ export const sideBarMenu = [
           },
           {
             title: "Working with widgets",
-            link: "/WorkingWithWidgets",
+            link: "/documentation/WorkingWithWidgets",
             isMenuExpanded: false,
             child: [],
           },

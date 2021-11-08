@@ -6,6 +6,12 @@
   font-weight: bolder;
   color: #fbaf3a !important;
 }
+
+.navlink-active-class {
+  font-weight: bolder;
+  color: #fbaf3a;
+}
+
 .brand-image {
   /* width: 250px; */
   max-height: 40px;
