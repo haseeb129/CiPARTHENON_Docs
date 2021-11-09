@@ -2,14 +2,14 @@
   text-decoration: none;
   color: black !important;
 }
-.navlink.active {
+.navlink-active-class .navlink.active {
   font-weight: bolder;
   color: #fbaf3a !important;
 }
 
 .navlink-active-class {
   font-weight: bolder;
-  color: #fbaf3a;
+  color: #fbaf3a !important;
 }
 
 .brand-image {

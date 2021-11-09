@@ -43,7 +43,9 @@ import { DashboardBinders } from "../../../pages/buildingDashboardSection/dashbo
 import { FilterYourWidgets } from "../../../pages/buildingDashboardSection/Filter_your_widgets";
 import { ComingSoon } from "../../../pages/comingSoon";
 import { useLocation, Redirect, useRouteMatch } from "react-router-dom";
-import { sideBarMenu, fetchListOfMenu } from "../../../helper/sidebar";
+import { fetchListOfMenu } from "../../../helper/sidebar/Documentation";
+import { sideBarMenu } from "../../../helper/sidebar/Documentation/sidebarContent";
+
 import { scroller, Element } from "react-scroll";
 
 const Documentation = (props) => {
@@ -70,7 +72,7 @@ const Documentation = (props) => {
     });
   };
 
-  const { url, path } = useRouteMatch();
+  const { path } = useRouteMatch();
 
   return (
     <div>
@@ -96,9 +98,9 @@ const Documentation = (props) => {
               <Switch>
                 <Route
                   exact
-                  path={`${path}/"`}
+                  path={`${path}/`}
                   render={(props) => (
-                    <Redirect to="GettingStarted" {...props} />
+                    <Redirect to={`${path}/GettingStarted`} {...props} />
                   )}
                 />
 
