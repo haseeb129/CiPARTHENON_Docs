@@ -13,7 +13,6 @@
 }
 
 .brand-image {
-  /* width: 250px; */
   max-height: 40px;
   padding-right: 10px;
 }
@@ -55,4 +54,35 @@
   background-color: #fff;
   border-top: 2px solid #fbaf3a;
   border-bottom: 1px solid silver;
+}
+
+.search-bar.form-control {
+  width: 250px;
+  font-size: 14px;
+  border-radius: 25px !important;
+}
+
+.suggestion-box {
+  margin-top: 5px;
+  max-height: 200px;
+  width: 250px;
+  background-color: lightgray;
+  position: absolute;
+  overflow-y: auto;
+  z-index: 99;
+}
+
+.suggestion-box::-webkit-scrollbar {
+  display: none;
+}
+
+.suggestion-box-inner {
+  border: 1px solid gray;
+  min-height: 40px;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.suggestion-box-inner:hover {
+  background-color: #fbaf3a;
 }

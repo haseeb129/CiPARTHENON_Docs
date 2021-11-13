@@ -1,10 +1,11 @@
 import React from "react";
 import "./header.css";
 import Logo from "../../../assests/OnlyLogo.png";
-import { Navbar, Nav, NavLink } from "react-bootstrap";
+import { Navbar, Nav, NavLink, FormControl, Form } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
-function Header() {
+function Header({ handleSearch, searchResults, onOptionSelect, searchValue }) {
+  console.log("handleSearch", searchResults);
   return (
     <Navbar collapseOnSelect expand="md" className="navbar-wrapper">
       <Navbar.Brand href="/">
@@ -25,6 +26,33 @@ function Header() {
             <NavLink className="navlink">FAQ</NavLink>
           </LinkContainer>
         </Nav>
+        <Form className="">
+          <FormControl
+            placeholder="Search"
+            className="mr-2 search-bar"
+            aria-label="Search"
+            onChange={handleSearch}
+            value={searchValue}
+          />
+          <div className="suggestion-box">
+            {searchResults.map((element, index) => {
+              return (
+                <div
+                  className="suggestion-box-inner"
+                  key={index}
+                  onClick={() => onOptionSelect(element)}
+                >
+                  {element.title}
+                </div>
+              );
+            })}
+
+            {/* <div className="suggestion-box-inner">Noice</div>
+            <div className="suggestion-box-inner">Noice</div>
+
+            <div className="suggestion-box-inner">Noice</div> */}
+          </div>
+        </Form>
       </Navbar.Collapse>
     </Navbar>
   );
