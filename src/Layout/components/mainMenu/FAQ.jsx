@@ -13,7 +13,7 @@ import { AccessingDashboards } from "../../../pages/accessingDashboardSection";
 import { GettingStarted } from "../../../pages/gettingStartedSection";
 import { OrganizeYourDashboards } from "../../../pages/accessingDashboardSection/Organize_your_dashboards";
 import { DashboardProperties } from "../../../pages/accessingDashboardSection/Organize_your_dashboards/Dashboard_Properties";
-import { fetchListOfMenu } from "../../../helper/sidebar/FAQ";
+import { fetchListOfMenu } from "../../../helper/sidebar";
 import { sideBarMenu } from "../../../helper/sidebar/FAQ/sidebarContent";
 
 const FAQ = (props) => {

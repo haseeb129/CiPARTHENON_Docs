@@ -43,7 +43,7 @@ import { DashboardBinders } from "../../../pages/buildingDashboardSection/dashbo
 import { FilterYourWidgets } from "../../../pages/buildingDashboardSection/Filter_your_widgets";
 import { ComingSoon } from "../../../pages/comingSoon";
 import { useLocation, Redirect, useRouteMatch } from "react-router-dom";
-import { fetchListOfMenu } from "../../../helper/sidebar/Documentation";
+import { fetchListOfMenu } from "../../../helper/sidebar";
 import { sideBarMenu } from "../../../helper/sidebar/Documentation/sidebarContent";
 
 import { scroller, Element } from "react-scroll";

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MenuItem from "./MenuItem";
-import { stylSelected } from "../../../helper/sidebar/Documentation";
+import { stylSelected } from "../../../helper/sidebar";
 
 const SideBar = (props) => {
   const [selectedMenutitle, setSelectedMenutitle] = useState(
