@@ -78,7 +78,7 @@ const Documentation = (props) => {
     <div>
       <Container fluid style={{ height: "100%" }}>
         <Row style={{ height: "88vh" }}>
-          <Col xs={5} md={5} lg={4} xl={4}>
+          <Col xs={5} md={4} lg={3} xl={3}>
             <Sidebar
               location={location.pathname}
               sideBarMenu={sideBarMenuList}
@@ -88,9 +88,9 @@ const Documentation = (props) => {
           </Col>
           <Col
             xs={7}
-            md={7}
-            lg={8}
-            xl={8}
+            md={8}
+            lg={9}
+            xl={9}
             className="right-column"
             id="right-column-id"
           >

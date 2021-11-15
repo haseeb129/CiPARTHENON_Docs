@@ -5,7 +5,6 @@ import { Navbar, Nav, NavLink, FormControl, Form } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
 function Header({ handleSearch, searchResults, onOptionSelect, searchValue }) {
-  console.log("handleSearch", searchResults);
   return (
     <Navbar collapseOnSelect expand="md" className="navbar-wrapper">
       <Navbar.Brand href="/">
@@ -33,6 +32,9 @@ function Header({ handleSearch, searchResults, onOptionSelect, searchValue }) {
             aria-label="Search"
             onChange={handleSearch}
             value={searchValue}
+            onKeyPress={(e) => {
+              if (e.key == "Enter") e.preventDefault();
+            }}
           />
           <div className="suggestion-box">
             {searchResults.map((element, index) => {
@@ -41,16 +43,12 @@ function Header({ handleSearch, searchResults, onOptionSelect, searchValue }) {
                   className="suggestion-box-inner"
                   key={index}
                   onClick={() => onOptionSelect(element)}
+                  onKeyDown={(e) => console.log("this is Div key down", e)}
                 >
                   {element.title}
                 </div>
               );
             })}
-
-            {/* <div className="suggestion-box-inner">Noice</div>
-            <div className="suggestion-box-inner">Noice</div>
-
-            <div className="suggestion-box-inner">Noice</div> */}
           </div>
         </Form>
       </Navbar.Collapse>
